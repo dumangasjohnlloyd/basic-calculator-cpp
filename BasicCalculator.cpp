@@ -102,6 +102,11 @@ void getNumbers(float &num1, float &num2) {
 }
 
 float multiply(float num1, float num2) { return  num1 * num2; }
-float divide( float num1, float num2) { return num1 / num2; }
+float divide( float num1, float num2) { 
+    if (num2 == 0) {
+        cout << "\033[31m Error! Division by zero is not allowed.\033[03m" << endl;
+        return 0;
+    }
+    return num1 / num2; }
 float add(float num1, float num2) { return num1 + num2; }
 float subtract(float num1, float num2) { return num1 - num2; }
