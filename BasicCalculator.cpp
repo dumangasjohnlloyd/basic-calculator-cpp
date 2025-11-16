@@ -1,4 +1,5 @@
 //1st C++ Project: Basic Calculator (BaCa)
+//code by Yō (John Lloyd A. Dumangas)
 
 #include <iostream>
 using namespace std;
@@ -8,6 +9,7 @@ void spacing1();
 
 void getNumbers(float &num1, float &num2);
 void handleInput();
+
 float multiply(float num1, float num2);
 float divide(float num1, float num2);
 float add(float num1, float num2);
@@ -23,7 +25,7 @@ int main() {
 
         cout << "Select an operation: ";
         while (!(cin >> selection)) {
-        handleInput();
+            handleInput();
         }
 
         cout << endl;
@@ -37,8 +39,6 @@ int main() {
             spacing1();
             continue;
         }
-    
-        // Get user numbers only once
 
         getNumbers(num1, num2);
 
@@ -71,13 +71,10 @@ int main() {
                 spacing1();
                 break;
 
-            //lacks type proofing
-
             default:
                 return 0;
                 break;
         }
-
     }
     return 0;
 }
@@ -103,7 +100,6 @@ void getNumbers(float &num1, float &num2) {
         handleInput();
     }
 
-    // cin >> num1;
     cout << "Enter second number: ";
     while (!(cin >> num2)) {
         handleInput();
@@ -118,11 +114,14 @@ void handleInput() {
 }
 
 float multiply(float num1, float num2) { return  num1 * num2; }
+
 float divide( float num1, float num2) { 
     if (num2 == 0) {
         cout << "\033[31m Error! Division by zero is not allowed.\033[03m" << endl;
         return 0;
     }
-    return num1 / num2; }
+    return num1 / num2;
+}
+
 float add(float num1, float num2) { return num1 + num2; }
 float subtract(float num1, float num2) { return num1 - num2; }
