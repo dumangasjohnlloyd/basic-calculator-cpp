@@ -7,6 +7,7 @@ void showMenu();
 void spacing1();
 
 void getNumbers(float &num1, float &num2);
+void handleInput();
 float multiply(float num1, float num2);
 float divide(float num1, float num2);
 float add(float num1, float num2);
@@ -96,9 +97,21 @@ void spacing1 () {
 
 void getNumbers(float &num1, float &num2) {
     cout << "Enter first number: ";
-    cin >> num1;
+    while (!(cin >> num1)) {
+        handleInput();
+    }
+
+    // cin >> num1;
     cout << "Enter second number: ";
-    cin >> num2;
+    while (!(cin >> num2)) {
+        handleInput();
+    }
+}
+
+void handleInput() {
+    cout << "Invalid input! Please enter a number: ";
+    cin.clear();
+    cin.ignore(1000, '\n');
 }
 
 float multiply(float num1, float num2) { return  num1 * num2; }
