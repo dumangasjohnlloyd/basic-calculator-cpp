@@ -43,14 +43,14 @@ int main() {
             case 1:
                 result = multiply(num1, num2);
                 cout << endl;
-                cout << num1 << " * " << num2 << " = " << result;
+                cout << "\033[32m" << num1 << " * " << num2 << " = " << result << "\033[0m";
                 spacing1();
                 break;
 
             case 2:
                 result = divide(num1, num2);
                 cout << endl;
-                cout << num1 << " / " << num2 << " = " << result;
+                cout << "\033[32m" << num1 << " / " << num2 << " = " << result << "\033[0m";
                 spacing1();
                 break;
 
