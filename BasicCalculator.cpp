@@ -111,7 +111,8 @@ void getNumbers(float &num1, float &num2) {
 }
 
 void handleInput() {
-    cout << "Invalid input! Please enter a number: ";
+    cout << "\033[31m Invalid input! \033[0m";
+    cout << "Please enter a number: ";
     cin.clear();
     cin.ignore(1000, '\n');
 }
