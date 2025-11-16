@@ -22,7 +22,9 @@ int main() {
         spacing1();
 
         cout << "Select an operation: ";
-        cin >> selection;
+        while (!(cin >> selection)) {
+        handleInput();
+        }
 
         cout << endl;
 
